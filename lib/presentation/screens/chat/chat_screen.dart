@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:yes_no_app/domain/entities/message.dart';
 import 'package:yes_no_app/presentation/providers/chat_provider.dart';
@@ -11,9 +12,9 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: Padding(
+    return PlatformScaffold(
+      appBar: PlatformAppBar(
+        leading:  Padding(
           padding: const EdgeInsets.all(4.0),
           child: const CircleAvatar(
             backgroundImage: NetworkImage(
@@ -21,8 +22,8 @@ class ChatScreen extends StatelessWidget {
             ),
           ),
         ),
-        title: const Text("Chat"),
-        centerTitle: false,
+        title: const PlatformText("Chat"),
+        material: (_,__) => MaterialAppBarData(centerTitle: false),
       ),
       body: _ChatView(),
     );
