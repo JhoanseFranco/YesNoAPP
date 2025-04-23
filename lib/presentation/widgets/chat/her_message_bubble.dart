@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:yes_no_app/domain/entities/message.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class HerMessageBubble extends StatelessWidget {
 
@@ -26,7 +25,7 @@ final colors = Theme.of(context).colorScheme;
               horizontal: 20,
               vertical: 10
             ),
-            child: PlatformText(
+            child: Text(
               message.text,
               style: TextStyle(
                 color: Colors.white
@@ -72,7 +71,7 @@ class _ImageBubble extends StatelessWidget {
               horizontal: 10,
               vertical: 5
             ),
-            child: PlatformText("Cargando imagen"),
+            child: Text("Cargando imagen"),
           );
         },
         )
